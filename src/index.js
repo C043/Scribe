@@ -1,6 +1,6 @@
 require("dotenv").config();
-const { Client, IntentsBitField } = require("discord.js");
 const { env } = require("node:process");
+const { Client, IntentsBitField } = require("discord.js");
 const DISCORD_TOKEN = env.DISCORD_TOKEN;
 const toUnicodeVariant = require("./toUnicodeVariant");
 
