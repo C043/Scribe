@@ -37,13 +37,14 @@ client.on("ready", c => {
   });
 });
 
-client.on("interactionCreate", interaction => {
+client.on("interactionCreate", async interaction => {
   if (!interaction.isChatInputCommand()) return;
 
   if (interaction.commandName === "convert") {
     if (interaction.options.get("variant").value === "zalgo") {
-      interaction.deferReply();
-      interaction.reply(zalgoRandomGeneration(interaction.options.get("message").value, 2));
+      await interaction
+        .deferReply()
+        .then(interaction.reply(zalgoRandomGeneration(interaction.options.get("message").value, 2)));
     } else {
       interaction.reply(
         toUnicodeVariant(
