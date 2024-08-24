@@ -30,7 +30,7 @@ const client = new Client({
 
 // Event listener
 client.on("ready", c => {
-  console.log(zalgoRandomGeneration("I'm ready", 5));
+  console.log(zalgoRandomGeneration("I'm ready", 2));
   console.log(`${c.user.username} is ready when you are!`);
   client.user.setActivity("to /convert", {
     type: ActivityType.Listening,
@@ -45,7 +45,7 @@ client.on("interactionCreate", async interaction => {
       interaction.reply(
         zalgoRandomGeneration(
           interaction.options.get("message").value,
-          parseInt(interaction.options.get("combinings")?.value) || 5
+          parseInt(interaction.options.get("combinings")?.value) || 2
         )
       );
     } else {
