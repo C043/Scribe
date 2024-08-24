@@ -45,7 +45,7 @@ client.on("interactionCreate", async interaction => {
       interaction.reply(
         zalgoRandomGeneration(
           interaction.options.get("message").value,
-          interaction.options.get("combinings")?.value || 5
+          parseInt(interaction.options.get("combinings")?.value) || 5
         )
       );
     } else {
