@@ -43,7 +43,7 @@ client.on("interactionCreate", async interaction => {
   if (interaction.commandName === "convert") {
     if (interaction.options.get("variant").value === "zalgo") {
       await interaction.deferReply();
-      await waitForDebugger(4_000);
+      await wait(4_000);
       await interaction.editReply(zalgoRandomGeneration(interaction.options.get("message").value, 2));
     } else {
       interaction.reply(
