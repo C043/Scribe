@@ -17,6 +17,16 @@ client.on("ready", c => {
   console.log(`${c.user.username} is ready when you are!`);
 });
 
+client.on("interactionCreate", interaction => {
+  if (!interaction.isChatInputCommand()) return;
+
+  if (interaction.commandName === "convert") {
+    interaction.reply(
+      toUnicodeVariant(interaction.options.get("message").value, interaction.options.get("variant").value)
+    );
+  }
+});
+
 client.on("messageCreate", msg => {
   if (msg.author.bot) {
     return;

@@ -1,11 +1,35 @@
 require("dotenv").config();
 const { env } = require("node:process");
-const { REST, Routes } = require("discord.js");
+const { REST, Routes, ApplicationCommandOptionType } = require("discord.js");
 
 const commands = [
   {
-    name: "hey",
-    description: "Replies with hey!",
+    name: "convert",
+    description: "Converts message to unicode variant of your choice.",
+    options: [
+      {
+        name: "message",
+        description: "The message to convert.",
+        type: ApplicationCommandOptionType.String,
+        required: true,
+      },
+      {
+        name: "variant",
+        description: "The unicode variant you want to use.",
+        type: ApplicationCommandOptionType.String,
+        choices: [
+          {
+            name: "gothic",
+            value: "gothic",
+          },
+          {
+            name: "gothic-bold",
+            value: "gothic bold",
+          },
+        ],
+        required: true,
+      },
+    ],
   },
 ];
 
