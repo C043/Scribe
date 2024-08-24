@@ -12,4 +12,16 @@ const client = new Client({
   ],
 });
 
+client.on("ready", c => {
+  console.log(`${c.user.username} is ready when you are!`);
+});
+
+client.on("messageCreate", msg => {
+  if (msg.author.bot) {
+    return;
+  } else if (msg.content === "hello") {
+    msg.reply("hello");
+  }
+});
+
 client.login(DISCORD_TOKEN);
