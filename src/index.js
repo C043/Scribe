@@ -1,4 +1,7 @@
 const { Client, IntentsBitField } = require("discord.js");
+require("dotenv").config();
+const { env } = require("node:process");
+const DISCORD_TOKEN = env.DISCORD_TOKEN;
 
 const client = new Client({
   intents: [
@@ -9,4 +12,4 @@ const client = new Client({
   ],
 });
 
-client.login("");
+client.login(DISCORD_TOKEN);
