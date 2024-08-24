@@ -42,7 +42,7 @@ client.on("interactionCreate", async interaction => {
 
   if (interaction.commandName === "convert") {
     if (interaction.options.get("variant").value === "zalgo") {
-      interaction.reply(zalgoRandomGeneration(interaction.options.get("message").value, 2));
+      interaction.reply(zalgoRandomGeneration(interaction.options.get("message").value, 5));
     } else {
       interaction.reply(
         toUnicodeVariant(
