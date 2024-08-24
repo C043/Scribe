@@ -44,7 +44,7 @@ client.on("interactionCreate", async interaction => {
     if (interaction.options.get("variant").value === "zalgo") {
       await interaction.deferReply();
       await wait(4_000);
-      await interaction.editReply(zalgoRandomGeneration(interaction.options.get("message").value, 2));
+      await interaction.reply(zalgoRandomGeneration(interaction.options.get("message").value, 2));
     } else {
       interaction.reply(
         toUnicodeVariant(
