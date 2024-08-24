@@ -17,6 +17,7 @@ app.listen(port, () => {
   console.log(`App listening on port ${port}`);
 });
 
+// Creazione del bot e assegnazione dei permessi
 const client = new Client({
   intents: [
     IntentsBitField.Flags.Guilds,
@@ -26,6 +27,7 @@ const client = new Client({
   ],
 });
 
+// Event listener
 client.on("ready", c => {
   console.log(`${c.user.username} is ready when you are!`);
 });
