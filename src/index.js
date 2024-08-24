@@ -2,6 +2,7 @@ require("dotenv").config();
 const { Client, IntentsBitField } = require("discord.js");
 const { env } = require("node:process");
 const DISCORD_TOKEN = env.DISCORD_TOKEN;
+const toUnicodeVariant = require("./toUnicodeVariant");
 
 const client = new Client({
   intents: [
@@ -19,8 +20,8 @@ client.on("ready", c => {
 client.on("messageCreate", msg => {
   if (msg.author.bot) {
     return;
-  } else if (msg.content === "hello") {
-    msg.reply("hello");
+  } else {
+    msg.reply(toUnicodeVariant(msg.content, "gothic bold"));
   }
 });
 
