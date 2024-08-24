@@ -19,6 +19,10 @@ const commands = [
         type: ApplicationCommandOptionType.String,
         choices: [
           {
+            name: "zalgo",
+            value: "valgo",
+          },
+          {
             name: "gothic",
             value: "gothic",
           },

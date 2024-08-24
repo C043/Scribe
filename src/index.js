@@ -3,6 +3,7 @@ const { env } = require("node:process");
 const { Client, IntentsBitField, ActivityType } = require("discord.js");
 const DISCORD_TOKEN = env.DISCORD_TOKEN;
 const toUnicodeVariant = require("./toUnicodeVariant");
+const { zalgoGeneration } = require("zalgo-generator");
 
 // Keep alive
 let express = require("express");
@@ -39,13 +40,17 @@ client.on("interactionCreate", interaction => {
   if (!interaction.isChatInputCommand()) return;
 
   if (interaction.commandName === "convert") {
-    interaction.reply(
-      toUnicodeVariant(
-        interaction.options.get("message").value,
-        interaction.options.get("variant").value,
-        interaction.options.get("combinings")?.value
-      )
-    );
+    if (interaction.options.get("variant").value === "zalgo") {
+      interaction.reply(zalgoGeneration(interaction.options.get("message").value, 2, 2, 2));
+    } else {
+      interaction.reply(
+        toUnicodeVariant(
+          interaction.options.get("message").value,
+          interaction.options.get("variant").value,
+          interaction.options.get("combinings")?.value
+        )
+      );
+    }
   }
 });
 
