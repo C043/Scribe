@@ -1,6 +1,6 @@
 require("dotenv").config();
 const { env } = require("node:process");
-const { Client, IntentsBitField } = require("discord.js");
+const { Client, IntentsBitField, ActivityType } = require("discord.js");
 const DISCORD_TOKEN = env.DISCORD_TOKEN;
 const toUnicodeVariant = require("./toUnicodeVariant");
 
@@ -30,6 +30,9 @@ const client = new Client({
 // Event listener
 client.on("ready", c => {
   console.log(`${c.user.username} is ready when you are!`);
+  client.user.setActivity("to /convert", {
+    type: ActivityType.Listening,
+  });
 });
 
 client.on("interactionCreate", interaction => {
