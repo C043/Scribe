@@ -20,7 +20,7 @@ const commands = [
         choices: [
           {
             name: "zalgo",
-            value: "valgo",
+            value: "zalgo",
           },
           {
             name: "gothic",
