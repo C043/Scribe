@@ -31,12 +31,4 @@ client.on("interactionCreate", interaction => {
   }
 });
 
-client.on("messageCreate", msg => {
-  if (msg.author.bot) {
-    return;
-  } else {
-    msg.reply(toUnicodeVariant(msg.content, "gothic bold"));
-  }
-});
-
 client.login(DISCORD_TOKEN);

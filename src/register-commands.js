@@ -119,7 +119,7 @@ const commands = [
       },
       {
         name: "combinings",
-        description: "Additional decorations.",
+        description: "Additional text decorations.",
         type: ApplicationCommandOptionType.String,
       },
     ],
