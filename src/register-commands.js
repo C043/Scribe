@@ -26,8 +26,101 @@ const commands = [
             name: "gothic-bold",
             value: "gothic bold",
           },
+          {
+            name: "monospace",
+            value: "monospace",
+          },
+          {
+            name: "bold",
+            value: "bold",
+          },
+          {
+            name: "italic",
+            value: "italic",
+          },
+          {
+            name: "bold-italic",
+            value: "bold italic",
+          },
+          {
+            name: "script",
+            value: "script",
+          },
+          {
+            name: "bold-script",
+            value: "bold script",
+          },
+          {
+            name: "doublestruck",
+            value: "doublestruck",
+          },
+          {
+            name: "sans",
+            value: "sans",
+          },
+          {
+            name: "bold-sans",
+            value: "bold sans",
+          },
+          {
+            name: "italic-sans",
+            value: "italic sans",
+          },
+          {
+            name: "bold-italic-sans",
+            value: "bold italic sans",
+          },
+          {
+            name: "circled",
+            value: "circled",
+          },
+          {
+            name: "circled-negative",
+            value: "circled negative",
+          },
+          {
+            name: "squared",
+            value: "squared",
+          },
+          {
+            name: "squared-negative",
+            value: "squared negative",
+          },
+          {
+            name: "paranthesis",
+            value: "paranthesis",
+          },
+          {
+            name: "fullwidth",
+            value: "fullwidth",
+          },
+          {
+            name: "flags",
+            value: "flags",
+          },
+          {
+            name: "numbers-dot",
+            value: "numbers dot",
+          },
+          {
+            name: "numbers-comma",
+            value: "numbers comma",
+          },
+          {
+            name: "number-double-circled",
+            value: "number double circled",
+          },
+          {
+            name: "roman",
+            value: "roman",
+          },
         ],
         required: true,
+      },
+      {
+        name: "combinings",
+        description: "Additional decorations.",
+        type: ApplicationCommandOptionType.String,
       },
     ],
   },

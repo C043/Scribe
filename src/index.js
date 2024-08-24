@@ -22,7 +22,11 @@ client.on("interactionCreate", interaction => {
 
   if (interaction.commandName === "convert") {
     interaction.reply(
-      toUnicodeVariant(interaction.options.get("message").value, interaction.options.get("variant").value)
+      toUnicodeVariant(
+        interaction.options.get("message").value,
+        interaction.options.get("variant").value,
+        interaction.options.get("combinings")?.value
+      )
     );
   }
 });
