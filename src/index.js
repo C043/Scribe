@@ -9,7 +9,7 @@ let express = require("express");
 const app = express();
 const port = env.PORT || 4000;
 
-app.createServer("/", (req, res) => {
+app.get("/", (req, res) => {
   res.send("I'm alive");
 });
 
