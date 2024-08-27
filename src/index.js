@@ -32,7 +32,7 @@ const client = new Client({
 client.on("ready", c => {
   console.log(zalgoRandomGeneration("I'm ready", 2));
   console.log(`${c.user.username} is ready when you are!`);
-  client.user.setActivity("to /convert", {
+  client.user.setActivity("/convert", {
     type: ActivityType.Listening,
   });
 });
