@@ -1,5 +1,5 @@
 services:
-  discord-bot:
+  scribe:
     build: .
     image: scribe
     restart: unless-stopped
