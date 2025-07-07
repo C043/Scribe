@@ -1,0 +1,7 @@
+services:
+  discord-bot:
+    build: .
+    image: scribe
+    restart: unless-stopped
+    env_file:
+      - .env
